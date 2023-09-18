@@ -27,7 +27,7 @@ def handler(job):
 
     embeddings = model.encode(sentences)
     encoded_embeddings = json.dumps(embeddings, cls=NumpyArrayEncoder)
-    return encoded_embeddings
+    yield encoded_embeddings
 
 runpod.serverless.start({
     "handler": handler,
