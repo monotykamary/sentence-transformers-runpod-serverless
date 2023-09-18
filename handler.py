@@ -23,9 +23,10 @@ def load_model():
 def handler(job):
     job_input = job['input']
     sentences = job_input.pop("sentences")
+    normalize_embeddings = job_input.pop("normalize_embeddings", False)
     model = load_model()
 
-    embeddings = model.encode(sentences)
+    embeddings = model.encode(sentences, normalize_embeddings=normalize_embeddings)
     encoded_embeddings = json.dumps(embeddings, cls=NumpyArrayEncoder)
     decoded_embeddings = json.loads(encoded_embeddings)
     yield decoded_embeddings

@@ -137,6 +137,6 @@ RUNPOD_AI_API_KEY='**************' RUNPOD_ENDPOINT_ID='*******' python predict.p
 ```
 To run with streaming enabled, use the `--stream` option. To set generation parameters, use the `--params_json` option to pass a JSON string of parameters:
 ```bash
-RUNPOD_AI_API_KEY='**************' RUNPOD_ENDPOINT_ID='*******' python predict.py --params_json '{"sentences": ["Explain The Great Gatsby in 4000 words.", "What is The Great Gatsby about?"]}'
+RUNPOD_AI_API_KEY='**************' RUNPOD_ENDPOINT_ID='*******' python predict.py --params_json '{"sentences": ["Explain The Great Gatsby in 4000 words.", "What is The Great Gatsby about?"], normalize_embeddings: true}'
 ```
 You can generate the API key [here](https://www.runpod.io/console/serverless/user/settings) under API Keys.
