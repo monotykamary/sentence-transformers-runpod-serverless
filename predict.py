@@ -43,9 +43,10 @@ def stream_output(task_id, stream=False):
                 data = response.json()
                 if len(data['stream']) > 0:
                     new_output = data['stream'][0]['output']
+                    new_output_value_json = json.dumps(new_output[len(previous_output):])
 
                     if stream:
-                        sys.stdout.write(new_output[len(previous_output):])
+                        sys.stdout.write(new_output_value_json)
                         sys.stdout.flush()
                     previous_output = new_output
 
